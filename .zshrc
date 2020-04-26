@@ -46,7 +46,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 # ENABLE_CORRECTION="true"
@@ -75,7 +75,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-vim-mode)
+plugins=(git k tmuxinator zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,26 +108,16 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/techno1731/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/techno1731/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/techno1731/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/techno1731/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/techno1731/google-cloud-sdk/path.zsh.inc' ]; then . '/home/techno1731/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/home/techno1731/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/techno1731/google-cloud-sdk/completion.zsh.inc'; fi
+# pyenv for managing python environments
+export PATH="/home/techno1731/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Tmux color scheme
 export TERM=screen-256color
+
+# Tmuxinator edits
+# Editor and Shell
+export EDITOR='vim'
+

@@ -52,6 +52,7 @@ Plugin 'rking/ag.vim'
 
 "Error Detection
 "Plugin 'w0rp/ale'
+
 "Jedi Autocompletion
 Plugin 'davidhalter/jedi-vim'
 
@@ -108,11 +109,6 @@ highlight BadWhitespace ctermbg=red guibg=red
 
 "UTF-8 Support
 set encoding=utf-8
-
-"YouCompleteMe customization
-let g:ycm_autoclose_preview_window_after_completion=1 
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 
 "python with virtualenv support
 let g:ycm_python_binary_path = 'python'
